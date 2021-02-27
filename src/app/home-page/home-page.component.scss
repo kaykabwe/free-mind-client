@@ -1,0 +1,62 @@
+body {
+  font-family: "Lato Regular", Arial, Helvetica, sans-serif;
+}
+
+:host {
+  text-align: center;
+}
+
+nz-header,
+nz-footer {
+  background: #7851a9;;
+  color: #fff;
+}
+  
+nz-header {
+  height: 100px;
+}
+
+nz-footer {
+  line-height: 1.5;
+}
+
+nz-sider {
+  display: flex;
+  justify-content: center;
+  background: #1a1124;
+}
+
+nz-content {
+  color: #000;
+  min-height: 120px;
+}
+
+nz-layout {
+  margin-bottom: 48px;
+  overflow-x: hidden;
+}
+
+nz-layout:last-child {
+  margin: 0;
+}
+
+.logo {
+  margin: 32px 8px;
+}
+
+#calendar {
+  margin: 32px 8px;
+}
+
+nz-page-header {
+  float: right;
+}
+
+nz-sider ul {
+  position: relative;
+  width: 200px;
+  left: 58px;
+  background-color: #1a1124;
+  color: #fff;
+  border-right: 0;
+}

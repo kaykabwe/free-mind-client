@@ -1,0 +1,64 @@
+<nz-layout>
+  <nz-sider nzWidth="336px">
+    <div class="logo">
+      <nz-avatar [nzSize]="112" nzText={{title}}></nz-avatar>
+    </div>
+
+    <nz-divider></nz-divider>
+
+    <div id="calendar" [ngStyle]="{ width: '300px', border: '1px solid #d9d9d9', borderRadius: '4px' }">
+      <nz-calendar [nzFullscreen]="false" 
+        (nzSelectChange)="onValueChange($event)" 
+        (nzPanelChange)="onPanelChange($event)">
+      </nz-calendar>
+    </div>
+
+    <nz-divider></nz-divider>
+
+    <ul nz-menu nzMode="inline">
+      <li nz-menu-item>dashboards</li>
+      <li nz-menu-item>computation notes</li>
+      <li nz-menu-item>contact us</li>
+    </ul>
+
+    <nz-divider></nz-divider>
+
+  </nz-sider>
+
+  <nz-layout>
+    <nz-header>
+      <nz-page-header class="site-page-header">
+        <nz-page-header-extra>
+          <ul nz-menu nzMode="horizontal">
+            <li nz-menu-item>
+              <a nz-dropdown [nzDropdownMenu]="user_menu">
+                user
+                <i nz-icon nzType="down"></i>
+              </a>
+              
+              <nz-dropdown-menu #user_menu="nzDropdownMenu">
+                <ul nz-menu nzSelectable>
+                  <li nz-menu-item>status</li>
+                  <li nz-menu-item>transaction history</li>
+                  <li nz-menu-item nzDanger>logout</li>
+                </ul>
+              </nz-dropdown-menu>
+            </li>
+            <li nz-menu-item routerLink="/login">
+              login
+            </li>
+        </ul>
+        </nz-page-header-extra>
+      </nz-page-header>
+    </nz-header>
+
+    <nz-content>
+      <app-announcement></app-announcement>
+      
+      <nz-divider></nz-divider>
+
+      <app-dashboard></app-dashboard>
+    </nz-content>
+    <nz-footer>free mind ©2021 Implemented By Ezeecode Technologies</nz-footer>
+  </nz-layout>
+</nz-layout>
