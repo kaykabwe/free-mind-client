@@ -8,7 +8,7 @@ body {
 
 nz-header,
 nz-footer {
-  background: #7851a9;;
+  background: #7851a9;
   color: #fff;
 }
   
@@ -42,6 +42,11 @@ nz-layout:last-child {
 
 .logo {
   margin: 32px 8px;
+}
+
+.logo nz-avatar {
+  font-family: "Lato Heavy";
+  color: #ff3300;
 }
 
 #calendar {
