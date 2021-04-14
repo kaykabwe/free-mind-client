@@ -1,1 +1,32 @@
-<p>login works!</p>
+
+<h1 style="color: #ff3300; text-align: center;">Free Mind Village Banking</h1>
+
+<span style="float: right; margin-right: 16px;">
+    <a routerLink="/">Home page</a>
+</span>
+<div id="free-mind-login">
+    <form action="" method="POST">
+        <div class="image-container">
+            <img src="free_mind.png" alt="Free mind" class="avatar" />
+        </div>
+    
+        <div class="container">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required />
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required />
+    
+            <input type="submit" value="Submit" />
+            <label>
+                <input type="checkbox" checked="checked" name="remember" /> Remember me
+            </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+<router-outlet></router-outlet>
