@@ -1,0 +1,51 @@
+
+<h1 style="color: #ff3300; text-align: center;">Free Mind Village Registration</h1>
+
+<span style="float: right; margin-right: 16px;">
+    <a routerLink="/">Home page</a>
+</span>
+<div id="free-mind-login">
+    <form #registerForm="ngForm">
+        <div class="image-container">
+            <img src="../../assets/images/logo/logo.png" alt="Free mind" class="avatar" />
+        </div>
+    
+        <div class="container">
+            {{diagnostic}}
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter first name" 
+              [(ngModel)]="testRegister.firstname" #firstname="ngModel" required />
+
+            <label for="othernames">Middle/Other Names</label>
+            <input type="text" id="othernames" name="othernames" placeholder="Enter other names" 
+              [(ngModel)]="testRegister.othernames" #othernames="ngModel" />
+
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter last name" 
+             [(ngModel)]="testRegister.lastname" #lastname="ngModel" required />
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" placeholder="Date of birth" 
+              [(ngModel)]="testRegister.dateofbirth" #dateofbirth="ngModel" required />
+    
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" 
+              [(ngModel)]="testRegister.username" #username="ngModel" required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" 
+              [(ngModel)]="testRegister.password" #password="ngModel" required />
+
+            <input type="submit" value="Register" />
+            <label>
+                <input type="checkbox" checked="checked" name="remember" /> Remember me
+            </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+<router-outlet></router-outlet>

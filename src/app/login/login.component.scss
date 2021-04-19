@@ -8,11 +8,11 @@
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
-    font-family: "Lato BoldItalic", Geneva, Tahoma, sans-serif
+    font-family: "Lato BoldItalic", Geneva, Tahoma, sans-serif;
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=date] {
     border: 1px solid #ccc;
     box-sizing: border-box;
     display: inline-block;
@@ -60,6 +60,26 @@ span.pwd {
     float: right;
     padding-top: 16px;
 }
+
+/* login form */
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+}
+    
+.ng-invalid:not(form)  {
+    border-left: 5px solid #A94442; /* red */
+}
+  
+.alert, .alert-danger {
+    font-family: "Lato HeavyItalic", Geneva, Tahoma, sans-serif;
+    color:#A94442;
+}
+
+input[type=submit]:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: not-allowed;
+  }
 
 /* Change styles for span and cancel button on extra small screens 
 @media screen and (max-width: 450px) {

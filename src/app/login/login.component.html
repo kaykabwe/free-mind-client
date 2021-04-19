@@ -1,23 +1,34 @@
 
-<h1 style="color: #ff3300; text-align: center;">Free Mind Village Banking</h1>
+<h1 style="color: #ff3300; text-align: center;">Free Mind Login</h1>
 
 <span style="float: right; margin-right: 16px;">
     <a routerLink="/">Home page</a>
 </span>
-<div id="free-mind-login">
-    <form action="" method="POST">
+<div id="free-mind-login" [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <div class="image-container">
-            <img src="free_mind.png" alt="Free mind" class="avatar" />
+            <img src="../../assets/images/logo/logo.png" alt="Free mind" class="avatar" />
         </div>
     
         <div class="container">
+            {{diagnostic}}
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username" required />
+            <input type="text" id="username" name="username" [(ngModel)]="testUser.username" 
+              placeholder="Enter Username" #username="ngModel" required />
+            <div [hidden]="username.valid || username.pristine"
+              class="alert alert-danger">
+              Username is Required
+            </div>
     
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter Password" required />
+            <input type="password" id="password" name="password" [(ngModel)]="testUser.password" 
+              placeholder="Enter Password" #password="ngModel" required />
+            <div [hidden]="password.valid || password.pristine"
+              class="alert alert-danger">
+              Password is Required
+            </div>
     
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" [disabled]="!loginForm.form.valid" />
             <label>
                 <input type="checkbox" checked="checked" name="remember" /> Remember me
             </label>
@@ -27,6 +38,15 @@
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
+
+        <div>
+          <hr>
+          Name via form.controls = {{showFormControls(loginForm)}}
+        </div>
     </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h2>You are logged in with username: {{testUser.username}}</h2>
 </div>
 <router-outlet></router-outlet>

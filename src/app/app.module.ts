@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginModule } from './login/login.module';
+import { RegisterModule } from './register/register.module';
 
 registerLocaleData(en);
 
@@ -34,6 +35,7 @@ registerLocaleData(en);
     SharedModule,
     AppRoutingModule,
     LoginModule,
+    RegisterModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
